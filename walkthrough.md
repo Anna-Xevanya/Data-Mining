@@ -17,7 +17,8 @@ Tujuan dari pemodelan ini adalah untuk memprediksi kategori tingkat polusi udara
   * **BAIK**: 3 data
   *(Terdapat ketidakseimbangan kelas / class imbalance yang signifikan pada kategori BAIK)*.
 * **Distribusi Target Visual**:
-![Target Distribution](file:///C:/Users/Hype%20AMD/.gemini/antigravity-ide/brain/044a2dc9-2e12-4bae-9c9e-5caa92fc43f9/target_distribution.png)
+![Target Distribution](<img width="1000" height="600" alt="target_distribution" src="https://github.com/user-attachments/assets/68b93bc7-e5c8-41d2-b6b4-4ad1fa00e597" />
+)
 
 * **Korelasi Antar Fitur (Polutan)**:
 ![Correlation Heatmap](file:///C:/Users/Hype%20AMD/.gemini/antigravity-ide/brain/044a2dc9-2e12-4bae-9c9e-5caa92fc43f9/correlation_heatmap.png)
