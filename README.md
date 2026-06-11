@@ -1,4 +1,4 @@
-# 🌫️ Analisis ISPU DKI Jakarta 2022
+# Analisis ISPU DKI Jakarta 2022
 
 Proyek analisis **Indeks Standar Pencemaran Udara (ISPU)** DKI Jakarta Tahun 2022 menggunakan kerangka metodologi **CRISP-DM** (Cross-Industry Standard Process for Data Mining).
 
@@ -9,7 +9,7 @@ Proyek analisis **Indeks Standar Pencemaran Udara (ISPU)** DKI Jakarta Tahun 202
 
 ---
 
-## 📋 Deskripsi Proyek
+## Deskripsi Proyek
 
 Dataset berisi data kualitas udara harian dari **5 stasiun pemantauan (DKI1–DKI5)** di Jakarta sepanjang tahun 2022, dengan 6 parameter polutan:
 
@@ -26,23 +26,21 @@ Dataset berisi data kualitas udara harian dari **5 stasiun pemantauan (DKI1–DK
 
 ---
 
-## 🗂️ Struktur Proyek
+## Struktur Proyek
 
 ```
 Data-Mining/
 │
-├── 📓 notebook.ipynb              ← Analisis CRISP-DM lengkap (6 tahap)
-├── 🐍 run_analysis.py             ← Script training model via terminal
-├── 📄 requirements.txt            ← Daftar dependensi Python
-├── 📖 README.md                   ← Dokumentasi proyek (file ini)
+├── notebook.ipynb              ← Analisis CRISP-DM lengkap (6 tahap)
+├── requirements.txt            ← Daftar dependensi Python
 │
-├── 📁 dataset/
+├── dataset/
 │   └── Filedata Indeks Standar Pencemaran Udara ISPU Tahun 2022.csv
 │
-├── 📁 dashboard/
+├── dashboard/
 │   └── dashboard.py               ← Dashboard Streamlit interaktif
 │
-└── 📁 model/                      ← Dibuat otomatis setelah training
+└── model/                      ← Dibuat otomatis setelah training
     ├── best_model.pkl             ← Model ML terbaik (terlatih)
     ├── scaler.pkl                 ← StandardScaler
     ├── label_encoder.pkl          ← LabelEncoder
@@ -51,25 +49,7 @@ Data-Mining/
 
 ---
 
-## ✨ Fitur
-
-### 📓 Notebook (notebook.ipynb)
-- **Tahap 1**: Business Understanding — latar belakang & tujuan bisnis
-- **Tahap 2**: Data Understanding — EDA, visualisasi, anomali data
-- **Tahap 3**: Data Preprocessing — fix tanggal, SMOTE, encoding, scaling
-- **Tahap 4**: Modelling — Decision Tree, Random Forest, KNN
-- **Tahap 5**: Evaluation — confusion matrix, feature importance, cross-validation
-- **Tahap 6**: Deployment — simpan model ke disk
-
-### 📊 Dashboard (dashboard.py)
-- **Tab Overview** — KPI metrics, distribusi kategori, polutan kritis per bulan
-- **Tab Tren Temporal** — line chart bulanan, heatmap polutan
-- **Tab Prediksi Real-time** — input 6 polutan → prediksi kategori udara
-- **Tab Analisis Lanjutan** — heatmap korelasi, boxplot, feature importance, scatter plot
-
----
-
-## 🚀 Cara Menjalankan
+## Cara Menjalankan
 
 ### Prasyarat
 - Python **3.10** atau lebih baru
@@ -140,7 +120,7 @@ Buka browser dan akses: **http://localhost:8501**
 
 ---
 
-## 📦 Dependensi Utama
+## Dependensi Utama
 
 | Package | Versi | Fungsi |
 |---|---|---|
@@ -158,23 +138,7 @@ Buka browser dan akses: **http://localhost:8501**
 
 ---
 
-## 📊 Hasil Model
-
-| Model | Accuracy | F1-Score (macro) |
-|---|---|---|
-| **Decision Tree** ⭐ | **100%** | **1.0000** |
-| Random Forest | 100% | 1.0000 |
-| KNN (K=1) | 97.78% | 0.9778 |
-
-> ⚠️ **Catatan**: Akurasi 100% terjadi karena ukuran dataset yang kecil (365 baris) + augmentasi SMOTE. Pada data produksi yang lebih besar dan bervariasi, akurasi realistis berkisar 85–95%.
-
-**Teknik Augmentasi**: SMOTE dengan `k_neighbors=1`
-- Data asli: 365 sampel (`BAIK=3, SEDANG=225, TIDAK SEHAT=137`)
-- Setelah SMOTE: 675 sampel (`BAIK=225, SEDANG=225, TIDAK SEHAT=225`)
-
----
-
-## 🔑 Temuan Utama
+## Temuan Utama
 
 1. **Polutan dominan**: PM2.5 adalah pencemar kritis yang paling sering muncul (~75% hari)
 2. **Bulan terburuk**: Juni–September (musim kemarau) → kualitas udara paling buruk
@@ -183,35 +147,13 @@ Buka browser dan akses: **http://localhost:8501**
 
 ---
 
-## 🛠️ Troubleshooting
-
-**Error: `Model not found`**
-```bash
-# Pastikan run_analysis.py atau notebook.ipynb sudah dijalankan
-python run_analysis.py
-```
-
-**Error: `ModuleNotFoundError`**
-```bash
-# Pastikan venv aktif, lalu install ulang
-pip install -r requirements.txt
-```
-
-**Dashboard tidak terbuka**
-```bash
-# Cek apakah port 8501 sudah digunakan
-streamlit run dashboard/dashboard.py --server.port 8502
-```
-
----
-
-## 📁 Dataset
+## Dataset
 
 Dataset ISPU DKI Jakarta Tahun 2022 tersedia di folder `dataset/`. Data bersumber dari **Open Data Jakarta** (data.jakarta.go.id).
 
 ---
 
-## 📜 Metodologi: CRISP-DM
+##  Metodologi: CRISP-DM
 
 ```
 1. Business Understanding  →  Rumusan masalah & tujuan
@@ -223,15 +165,3 @@ Dataset ISPU DKI Jakarta Tahun 2022 tersedia di folder `dataset/`. Data bersumbe
 ```
 
 ---
-
-## 👨‍💻 Cara Kontribusi
-
-1. Fork repository ini
-2. Buat branch baru: `git checkout -b fitur/nama-fitur`
-3. Commit perubahan: `git commit -m 'Tambah fitur X'`
-4. Push ke branch: `git push origin fitur/nama-fitur`
-5. Buat Pull Request
-
----
-
-*Dibuat dengan ❤️ menggunakan Python & Streamlit*
