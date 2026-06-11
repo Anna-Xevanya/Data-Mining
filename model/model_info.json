@@ -1,0 +1,23 @@
+{
+  "best_model_name": "Decision Tree",
+  "features": [
+    "pm_10",
+    "pm_duakomalima",
+    "so2",
+    "co",
+    "o3",
+    "no2"
+  ],
+  "classes": [
+    "BAIK",
+    "SEDANG",
+    "TIDAK SEHAT"
+  ],
+  "accuracy": 1.0,
+  "f1_macro": 1.0,
+  "precision": 1.0,
+  "recall": 1.0,
+  "train_samples": 540,
+  "test_samples": 135,
+  "smote_applied": true
+}
