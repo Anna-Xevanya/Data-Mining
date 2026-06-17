@@ -128,6 +128,7 @@ st.markdown("""
 @st.cache_data
 def load_data():
     df = pd.read_csv(DATA_PATH)
+    df = df.drop_duplicates().reset_index(drop=True)
 
     # Fix anomali tanggal Februari (tahun 2020 → 2022)
     mask_feb = df['periode_data'] == 202202
